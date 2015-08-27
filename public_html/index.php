@@ -37,6 +37,11 @@ class NonDeterministicRunner {
 
 $nd = new NonDeterministicRunner();
 $nd->registerAction("be-sane", 98, function() {
+    $big_array = array("b");
+    for ($i = 1; $i < pow(2, 10); $i++) {
+        $big_array[$i] = $big_array[$i - 1] . $big_array[0];
+    }
+    var_dump( $big_array );
     echo "Hi, I am the sane response!";
 });
 $nd->registerAction("be-forever", 1, function() {
