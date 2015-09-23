@@ -1,5 +1,7 @@
 FROM ubuntu:trusty
 
+MAINTAINER Yuvi Panda <yuvipanda@riseup.net>
+
 RUN sudo apt-get update
 RUN sudo apt-get install --yes lighttpd php5-cgi
 RUN mkdir -p /data/project/test
